@@ -37,11 +37,11 @@ private:
     QBrush backgroundBrush;
     QPen tracePen;
     QPen pointPen;
-    QPoint currentPointPosition;
     QGraphicsEllipseItem* currentPointCircle;
     QMessageBox messageBox;
     int increment;
 
 
 };
+
 #endif // MAINWINDOW_H

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>271</width>
+    <width>272</width>
     <height>365</height>
    </rect>
   </property>
@@ -147,7 +147,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame_2">
+        <widget class="QFrame" name="frameSpin">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -157,6 +157,12 @@
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="1">
            <widget class="QSpinBox" name="yOscSpin">
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+            <property name="keyboardTracking">
+             <bool>true</bool>
+            </property>
             <property name="minimum">
              <number>-150</number>
             </property>
@@ -179,14 +185,14 @@
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="yOscLabel">
             <property name="text">
              <string>yOsc:</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="incrementLabel">
             <property name="text">
              <string>Incremento:</string>
             </property>
@@ -196,7 +202,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame">
+        <widget class="QFrame" name="frameButtons">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -304,8 +310,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>271</width>
-     <height>24</height>
+     <width>272</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">
@@ -313,7 +319,7 @@
      <string>Arquivo</string>
     </property>
     <addaction name="actionNovo"/>
-    <addaction name="actionAbrir_2"/>
+    <addaction name="actionAbrir"/>
     <addaction name="actionSalvar"/>
     <addaction name="separator"/>
     <addaction name="actionSair"/>
@@ -332,7 +338,7 @@
     <string>Novo...</string>
    </property>
   </action>
-  <action name="actionAbrir_2">
+  <action name="actionAbrir">
    <property name="text">
     <string>Abrir...</string>
    </property>

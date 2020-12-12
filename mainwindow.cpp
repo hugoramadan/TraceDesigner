@@ -3,11 +3,11 @@
 #include <iostream>
 
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , tracePen(Qt::darkGreen)
-    , currentPointPosition(0,0)
     , currentPointCircle(nullptr)
 {
     setFixedSize(267,341);
@@ -22,8 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     scene.setSceneRect(5,5,140,140);
     scene.setBackgroundBrush(backgroundBrush);
     //scene.addLine(10,10,70,70, tracePen);
-    currentPointPosition.setY(ui->traceView->height()/2);
-    currentPointCircle = scene.addEllipse(currentPointPosition.x(), currentPointPosition.y(), 4,4, pointPen);
+    currentPointCircle = scene.addEllipse(0, ui->traceView->height()/2, 4,4, pointPen);
     increment = ui->incrementSpin->value();
     messageBox.setText("Movimento fora dos limites");
 
@@ -90,7 +89,8 @@ void MainWindow::yOscSpinChanged()
 {
     std::cout << "yOscSpinChanged"<< std::endl;
 
-    currentPointCircle->setY(map(ui->yOscSpin->value()));
+    currentPointCircle->setY(ui->yOscSpin->value());
+    std::cout << "currentPointCircle->y(): "<< currentPointCircle->y() << std::endl;
 
 }
 
