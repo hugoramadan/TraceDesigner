@@ -8,6 +8,9 @@
 #include <QGraphicsLineItem>
 #include <QMessageBox>
 #include <QVector>
+#include "currentpoint.h"
+
+#define ZERO_Y_OSC ui->traceView->width()/2
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,6 +35,8 @@ public slots:
     void nextButtonClicked();
     void incrementSpinChanged();
     void yOscSpinChanged();
+    void redrawTrace();
+    void printTraceYOsc();
 
 private:
     Ui::MainWindow *ui;
@@ -39,12 +44,14 @@ private:
     QBrush backgroundBrush;
     QPen tracePen;
     QPen pointPen;
-    QGraphicsEllipseItem* currentPointCircle;
+    //QGraphicsEllipseItem* currentPointCircle;
     QGraphicsLineItem* currentLine;
     QMessageBox messageBox;
     int increment;
     QVector<int> traceYOsc;
-    int currentPointPosition;
+    int currentYOsc;
+    int previousYPos;
+    CurrentPoint currentPoint;
 
 
 };
