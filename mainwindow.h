@@ -5,7 +5,9 @@
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QGraphicsEllipseItem>
+#include <QGraphicsLineItem>
 #include <QMessageBox>
+#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,8 +40,11 @@ private:
     QPen tracePen;
     QPen pointPen;
     QGraphicsEllipseItem* currentPointCircle;
+    QGraphicsLineItem* currentLine;
     QMessageBox messageBox;
     int increment;
+    QVector<int> traceYOsc;
+    int currentPointPosition;
 
 
 };
